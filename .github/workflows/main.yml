@@ -4,7 +4,7 @@ name: build pipeline
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ deployment ]
+    branches: [ development ]
   pull_request:
     branches: [ development ]
 jobs:
