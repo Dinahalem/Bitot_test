@@ -1,0 +1,10 @@
+version: '3.7'
+services: 
+  app:
+    image: python
+    environment:
+      - VIRTUAL_ENV=exvenv
+    command: |
+      python -m venv exvenv && \ 
+      source exvenv/bin/activate && \ 
+      pip install -r requirements.txt
