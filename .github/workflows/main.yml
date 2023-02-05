@@ -33,7 +33,7 @@ jobs:
   
   deploy_to_docker:
     name: Push to EC2 Instance
-    runs-on: self-hosted
+    runs-on: LAPTOP-DVVKMAF8
 
     steps:
       - name: Checkout the code
@@ -41,12 +41,11 @@ jobs:
       
       - name: Deploy to Server1
         #uses: Dinahalem/Bitot_test@deployment
-        #env: 
-          # SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          # SOURCE: /
-           #REMOTE_HOST: ${{secrets.SSH_HOST}}
-           #REMOTE_USER:  ${{secrets.SSH_USER}}
-           #TARGET:  ${{secrets.TARGET_DIR}}
+        env: 
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
         run: |
            #docker stop new_app
            #docker rm new_app
