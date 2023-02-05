@@ -20,7 +20,7 @@ jobs:
       with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }} 
-          repository: Dinahalem/APP_Workflow
+          repository: Dinahalem/Bitot_test
                      
     - name: Build and push
       uses: docker/build-push-action@v2
@@ -40,13 +40,13 @@ jobs:
         uses: actions/checkout@v2
       
       - name: Deploy to Server1
-        #uses: Dinahalem/APP_Workflow@main
-        env: 
-           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-           SOURCE: /
-           REMOTE_HOST: ${{secrets.SSH_HOST}}
-           REMOTE_USER:  ${{secrets.SSH_USER}}
-           TARGET:  ${{secrets.TARGET_DIR}}
+        #uses: Dinahalem/Bitot_test@deployment
+        #env: 
+          # SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+          # SOURCE: /
+           #REMOTE_HOST: ${{secrets.SSH_HOST}}
+           #REMOTE_USER:  ${{secrets.SSH_USER}}
+           #TARGET:  ${{secrets.TARGET_DIR}}
         run: |
            docker stop new_app
            docker rm new_app
