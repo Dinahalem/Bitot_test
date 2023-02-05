@@ -1,0 +1,20 @@
+name: CI/CD pipeline
+on: [push, pull_request]
+jobs: 
+  build: 
+    runs-on: ubuntu-latest
+    steps: 
+    - uses: actions/checkout@v2 # Checkout the repo's main branch
+    - name: Execute app.py # Execute hello.py script
+      run: python app.py 
+
+    - name: Run Tests # Run tests to check if the script is working properly 
+      run: python test_hello.py
+
+    - name: Deployment # Deploy the script if tests pass successfully 
+      if: success() # If tests pass successfully, then deploy the script  
+      run: deploy app.py
+
+    - name : Notify on failure # Fire a notification if tests fail  
+      if : failure() # If tests fail, then fire a notification  
+      run : notify_failure()
