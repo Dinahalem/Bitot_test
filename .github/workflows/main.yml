@@ -6,7 +6,10 @@ jobs:
     steps: 
     - uses: actions/checkout@v2 # Checkout the repo's main branch
     - name: Execute app.py # Execute hello.py script
-      run: python app.py 
+      run: |
+          pip3 install flask
+          pip3 install -r requirements.txt
+          python app.py 
 
     - name: Run Tests # Run tests to check if the script is working properly 
       run: python test_hello.py
