@@ -12,8 +12,7 @@ jobs:
           python3 -m venv flask
           . flask/bin/activate
           pip3 install flask
-          flask run
-          python app.py 
+          python3 app.py 
 
     - name: Run Tests # Run tests to check if the script is working properly 
       run: python test_hello.py
