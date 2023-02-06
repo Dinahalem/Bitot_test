@@ -8,10 +8,7 @@ jobs:
     - name: Execute app.py # Execute hello.py script
       run: |
           sudo apt-get install python3
-          python -m venv .
-          python -m venv flask
-          . flask/bin/activate
-          pip install flask
+          pip install -r requirements.txt
           python app.py 
 
     - name: Run Tests # Run tests to check if the script is working properly 
