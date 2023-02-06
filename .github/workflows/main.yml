@@ -34,6 +34,7 @@ jobs:
     - name: Build container
       run: |
             . flask/bin/activate
+            pip3 install pyinstaller
             python -m PyInstaller app.py
             docker build -t dina2022/flask-botit .
             
