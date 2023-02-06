@@ -107,9 +107,17 @@ resource "aws_instance" "first-server" {
   user_data = <<-EOF
               #! /bin/bash
               sudo apt update -y
-              sudo apt install apache2 -y
-              sudo systemctl start apache2
-              sudo bash -c 'echo your very first web server > /var/www/html/index.html'
+              sudo apt-get install python3
+              python -m venv .
+              python -m venv exvenv
+              . exven/bin/activate
+              pip install flask
+              pip install -r requirements.txt
+              python3 app.py
+              python3 test_hello.py
+              docker build -t dina2022/flask-botit .
+              kubectl apply -f botit-deployment.yaml
+              kubectl apply -f node-port.yaml
               EOF
   tags = {
     Name = "ubuntu"
