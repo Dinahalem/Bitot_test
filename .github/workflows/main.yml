@@ -23,4 +23,5 @@ jobs:
 
     - name : Notify on failure # Fire a notification if tests fail  
       if : failure() # If tests fail, then fire a notification  
-      run : notify_failure()
+      run : |
+          echo 'fail'
