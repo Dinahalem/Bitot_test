@@ -7,6 +7,9 @@ jobs:
     - uses: actions/checkout@v2 # Checkout the repo's main branch
     - name: Execute app.py # Execute hello.py script
       run: |
+          sudo apt install python-virtualenv
+          mkdir project 
+          cd project
           python3 -m venv exvenv
           . venv/bin/activate
           pip3 install flask
