@@ -16,7 +16,7 @@ jobs:
     - name: Run Tests # Run tests to check if the script is working properly 
       run: |
           . flask/bin/activate
-          python app.py  
+          python test_hello.py  
            
           #python -m unittest discover -t .. -s test -p "test_hello.py"
 
