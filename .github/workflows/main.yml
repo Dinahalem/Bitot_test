@@ -13,7 +13,17 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
      
-  build: 
+
+  deploy_to_EC2:
+    name: Push to EC2 Instance
+    
+    #runs-on: self-hosted       #in case EC2 server running 
+    #env: 
+        # SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
+        # REMOTE_HOST: ${{secrets.SSH_HOST}}
+        # REMOTE_USER:  ${{secrets.SSH_USER}}
+        # TARGET:  ${{secrets.TARGET_DIR}}
+    
     runs-on: ubuntu-latest
     steps: 
     - uses: actions/checkout@v2 # Checkout the repo's main branch
