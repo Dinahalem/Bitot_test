@@ -22,7 +22,8 @@ jobs:
 
     - name: Deployment # Deploy the script if tests pass successfully 
       if: success() # If tests pass successfully, then deploy the script  
-      run: deploy app.py
+      run: |
+          python app.py
 
     - name : Notify on failure # Fire a notification if tests fail  
       if : failure() # If tests fail, then fire a notification  
