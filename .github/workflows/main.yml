@@ -34,7 +34,7 @@ jobs:
     - name: Build container
       run: |
             . flask/bin/activate
-            python -m app.py
+            python -m PyInstaller app.py
             docker build -t dina2022/flask-botit .
             
     - name: Deployment # Deploy the script if tests pass successfully 
