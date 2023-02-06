@@ -46,7 +46,7 @@ jobs:
           . flask/bin/activate
           pip3 install pyinstaller
           python -m PyInstaller app.py
-          docker build -t dina2022/flask-botit .
+          docker run -d -p 5000:5000 --name new_app dina2022/flask-botit
             
     - name: Deployment on K8s 
       run: |  
