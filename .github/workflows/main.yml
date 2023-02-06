@@ -43,17 +43,15 @@ jobs:
           #python -m unittest discover -t .. -s test -p "test_hello.py"
     - name: Build container
       run: |
-            . flask/bin/activate
-            pip3 install pyinstaller
-            python -m PyInstaller app.py
-            docker build -t dina2022/flask-botit .
+          . flask/bin/activate
+          pip3 install pyinstaller
+          python -m PyInstaller app.py
+          docker build -t dina2022/flask-botit .
             
-    - name: Deployment # Deploy the script if tests pass successfully 
-      if: success() # If tests pass successfully, then deploy the script  
-      run: |
-          python app.py
+    - name: Deployment on K8s 
+      run: |  
+          minikube start
+          kubectl apply -f deploy/botit-deployment.yaml
+          kubectl apply -f deploy/node-port.yaml
 
-    - name : Notify on failure # Fire a notification if tests fail  
-      if : failure() # If tests fail, then fire a notification  
-      run : |
-          echo 'fail'
+
