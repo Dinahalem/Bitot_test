@@ -8,8 +8,8 @@ jobs:
     - name: Execute app.py # Execute hello.py script
       run: |
           pip install virtualenv
-          python -m virtual exvenv
-          . exvenv/bin/activate
+          python -m virtual flask
+          . flask/bin/activate
           pip3 install flask
           #pip3 install -r requirements.txt
           python app.py 
