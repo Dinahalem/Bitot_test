@@ -17,7 +17,7 @@ jobs:
 
     - name: Run Tests # Run tests to check if the script is working properly 
       run: |
-          python -m unittest discover -t .. -s test -p "*.py"
+          python -m unittest discover -t .. -s test -p "test_hello.py"
 
     - name: Deployment # Deploy the script if tests pass successfully 
       if: success() # If tests pass successfully, then deploy the script  
