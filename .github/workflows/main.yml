@@ -12,10 +12,12 @@ jobs:
           python3 -m venv flask
           . flask/bin/activate
           pip3 install flask
+          pip3 install -r requirements.txt
           python app.py 
 
     - name: Run Tests # Run tests to check if the script is working properly 
-      run: python test_hello.py
+      run: |
+          python -m unittest discover -t .. -s test -p "*.py"
 
     - name: Deployment # Deploy the script if tests pass successfully 
       if: success() # If tests pass successfully, then deploy the script  
