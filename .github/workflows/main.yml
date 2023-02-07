@@ -12,6 +12,12 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: dina2022/new-flask
      
 
   deploy_to_EC2:
@@ -46,8 +52,6 @@ jobs:
           . flask/bin/activate
           pip3 install pyinstaller
           python -m PyInstaller app.py
-          docker build -t dina2022/new-flask .
-          docker push
           docker run -d -p 9999:5000 --name new_app dina2022/flask-botit
             
     - name: Deployment on K8s 
