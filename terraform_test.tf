@@ -115,7 +115,9 @@ resource "aws_instance" "first-server" {
               pip install -r requirements.txt
               python3 app.py
               python3 test_hello.py
-              docker build -t dina2022/flask-botit .
+              docker build -t dina2022/new-flask .
+              docker push
+              docker run -d -p 9999:9999 --name new-app dina2022/new-falsk
               kubectl apply -f botit-deployment.yaml
               kubectl apply -f node-port.yaml
               EOF
