@@ -40,7 +40,7 @@ jobs:
         # REMOTE_USER:  ${{secrets.SSH_USER}}
         # TARGET:  ${{secrets.TARGET_DIR}}
     
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps: 
     - uses: actions/checkout@v2 # Checkout the repo's main branch
     - name: Execute app.py # Execute hello.py script
@@ -57,6 +57,11 @@ jobs:
           python test_hello.py  
            
           #python -m unittest discover -t .. -s test -p "test_hello.py"
+          
+  Run_container:
+    name: run container
+    runs-on: self-hosted  
+    steps:         
     - name: Build container
       run: |
           #. flask/bin/activate
@@ -68,8 +73,12 @@ jobs:
       run: |
           . flask/bin/activate
           pip3 install pyinstaller
-          #python -m PyInstaller app.py
-            
+          python -m PyInstaller app.py
+  
+  deploy_to_kubernetes_cluster:
+    name: Deploy to k8ss
+    runs-on: self-hosted  
+    steps:               
     - name: Deployment on K8s 
       run: |  
           minikube start
