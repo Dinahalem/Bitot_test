@@ -73,6 +73,7 @@ jobs:
     
     - name: Deploy
       run: |
+          python3 -m venv flask
           . flask/bin/activate
           #pip install wheel
           #pip3 install pyinstaller
