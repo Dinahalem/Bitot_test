@@ -74,6 +74,7 @@ jobs:
     - name: Deploy
       run: |
           . flask/bin/activate
+          pip install wheel
           pip3 install pyinstaller
           python -m PyInstaller app.py
   
