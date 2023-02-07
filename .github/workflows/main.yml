@@ -73,6 +73,7 @@ jobs:
     
     - name: Deploy
       run: |
+          rm -r app
           mkdir app
           cd app
           python3 -m venv flask
