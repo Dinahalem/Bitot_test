@@ -59,9 +59,9 @@ jobs:
     - name: Build container
       run: |
           . flask/bin/activate
-          pip3 install pyinstaller
-          python -m PyInstaller app.py
-          docker run -d -p 5002:5000 --name new_app dina2022/new-flask
+          #pip3 install pyinstaller
+          #python -m PyInstaller app.py
+          docker run -d -p 5000:5000 --name new_app dina2022/new-flask
             
     - name: Deployment on K8s 
       run: |  
