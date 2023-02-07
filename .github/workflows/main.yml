@@ -29,7 +29,6 @@ jobs:
           push: true
           tags: dina2022/new-flask
      
-
   deploy_to_EC2:
     name: Push to EC2 Instance
     
