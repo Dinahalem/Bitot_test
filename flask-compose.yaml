@@ -3,6 +3,6 @@ services:
   web: 
     build: . 
     ports:  
-      - "9999:5000"
+      - "5001:5001"
     
 
