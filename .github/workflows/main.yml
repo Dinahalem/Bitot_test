@@ -68,7 +68,7 @@ jobs:
       run: |
           . flask/bin/activate
           pip3 install pyinstaller
-          python -m PyInstaller app.py
+          #python -m PyInstaller app.py
             
     - name: Deployment on K8s 
       run: |  
