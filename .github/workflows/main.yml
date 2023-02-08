@@ -30,36 +30,7 @@ jobs:
           push: true
           tags: dina2022/new-flask
         
-  deploy_to_EC2:
-    name: Push to EC2 Instance
-    
-    #runs-on: self-hosted       #in case EC2 server running 
-    #env: 
-        # SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-        # REMOTE_HOST: ${{secrets.SSH_HOST}}
-        # REMOTE_USER:  ${{secrets.SSH_USER}}
-        # TARGET:  ${{secrets.TARGET_DIR}}
-    
-    runs-on: self-hosted
-    steps: 
-    #- uses: actions/checkout@v2 # Checkout the repo's main branch
-    - uses: actions/checkout@v2
-      with: 
-         python-version: '3.7'
-    - name: Execute app.py # Execute hello.py script
-      run: |
-          python3 -m venv flask
-          . flask/bin/activate
-          pip install flask
-          pip install -r requirements.txt
-          #python ./test_hello.py 
-          #python ./app.py
-          
 
-    - name: Run Tests # Run tests to check if the script is working properly 
-      run: |
-          python ./test_hello.py 
-          python ./app.py
            
           
   Run_container:
