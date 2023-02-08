@@ -14,4 +14,7 @@ spec:
     spec:
       containers:
       - name: project
-        image: dina2022/flask-botit
+        image: dina2022/new-flask
+        ports:
+        - containerPort: 5000
+        
