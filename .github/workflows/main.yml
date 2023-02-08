@@ -66,7 +66,7 @@ jobs:
       run: |
           #pip3 install pyinstaller
           #python -m PyInstaller app.py
-          python ./app.py
+          #python ./app.py
           docker stop new_app
           docker rm new_app
           docker run -d -p 5002:5002 --name new_app dina2022/new-flask
