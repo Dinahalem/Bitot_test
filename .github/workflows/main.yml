@@ -73,11 +73,7 @@ jobs:
     
     - name: Deploy
       run: |
-          #python3 -m venv flask
-          #. flask/bin/activate
-          #pip install wheel
-          #pip3 install pyinstaller
-          python3 -m ./app.py
+          python ./app.py
   
   deploy_to_kubernetes_cluster:
     name: Deploy to k8ss
