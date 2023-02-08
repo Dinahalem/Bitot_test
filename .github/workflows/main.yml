@@ -64,8 +64,6 @@ jobs:
     steps:         
     - name: Build container
       run: |
-          python3 -m venv flask
-          . flask/bin/activate
           #pip3 install pyinstaller
           #python -m PyInstaller app.py
           python ./app.py
