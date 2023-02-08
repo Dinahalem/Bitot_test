@@ -55,3 +55,4 @@ jobs:
           minikube start
           kubectl apply -f botit-deployment.yaml
           kubectl apply -f node-port.yaml
+
