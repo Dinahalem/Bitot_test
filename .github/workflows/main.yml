@@ -43,7 +43,7 @@ jobs:
     runs-on: self-hosted
     steps: 
     #- uses: actions/checkout@v2 # Checkout the repo's main branch
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v2
       with: 
          python-version: '3.7'
     - name: Execute app.py # Execute hello.py script
