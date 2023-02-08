@@ -49,13 +49,15 @@ jobs:
           . flask/bin/activate
           pip install flask
           pip install -r requirements.txt
-          
-
-    - name: Run Tests # Run tests to check if the script is working properly 
-      run: |
-          . flask/bin/activate
           python test_hello.py 
           python app.py
+          
+
+    #- name: Run Tests # Run tests to check if the script is working properly 
+      #run: |
+          #. flask/bin/activate
+          #python test_hello.py 
+          #python app.py
            
           
   Run_container:
