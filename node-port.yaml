@@ -6,7 +6,7 @@ spec:
   selector:
     component: botit
   ports:
-  - name: node-port
-    port: 8080
-    targetPort: 80
+  - protocol: "TCP"
+    port: 5000
+    targetPort: 5000
   type: NodePort
