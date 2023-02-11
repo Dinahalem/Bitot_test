@@ -4,6 +4,6 @@ COPY ./requirements.txt /app/requirements.txt
 
 RUN pip install -r requirements.txt
 COPY . /app
-EXPOSE 9999
+EXPOSE 5002
 CMD ["python","hello.py"]
 
