@@ -38,13 +38,8 @@ jobs:
     runs-on: self-hosted  
     steps:         
     - name: Build container
-      run: |
-          #pip3 install pyinstaller
-          #python -m PyInstaller app.py
-          #python ./app.py
-          #docker stop new_app
-          #docker rm new_app
-          docker run -d -p 5002:5002 --name bitot-test dina2022/new-app
+      run: |          #pip3 install pyinstaller
+          docker run -d -p 5002:5002 --name test-devops dina2022/new-app
     
   deploy_to_kubernetes_cluster:
     name: Deploy to k8ss
