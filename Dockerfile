@@ -1,7 +1,9 @@
 FROM python:3.7
 WORKDIR /app
-COPY . /app
+COPY ./requirements.txt /app/requirements.txt
+
 RUN pip install -r requirements.txt
-EXPOSE 5000
-CMD [ "python","app.py"]
+COPY . /app
+EXPOSE 9999
+CMD ["python","hello.py"]
 
