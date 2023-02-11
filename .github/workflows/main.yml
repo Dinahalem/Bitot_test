@@ -38,7 +38,9 @@ jobs:
     runs-on: self-hosted  
     steps:         
     - name: Build container
-      run: |          #pip3 install pyinstaller
+      run: |       
+          docker stop test-devops
+          docker rm test-devops
           docker run -d -p 5002:5002 --name test-devops dina2022/new-app
     
   deploy_to_kubernetes_cluster:
