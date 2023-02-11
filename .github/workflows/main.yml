@@ -42,8 +42,7 @@ jobs:
           #pip3 install pyinstaller
           #python -m PyInstaller app.py
           #python ./app.py
-          docker stop new_app
-          docker rm new_app
+         
           docker run -d -p 5000:5000 --name new_app dina2022/new-app
     
   deploy_to_kubernetes_cluster:
